@@ -10,10 +10,12 @@ airbnb_env/
 # Distribution / packaging
 .Python
 build/
+.sqlite3
 develop-eggs/
 dist/
 downloads/
 eggs/
+
 .eggs/
 lib/
 lib64/
