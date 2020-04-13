@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block stylesheet %} {% endblock %}
+    <title>{% block title %}Airbnb{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %} {% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo border-top">
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left mb-1 mt-5">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 mx-auto">
+            <!-- Links -->
+            <h5 class="text-uppercase mt-3 mb-3">about</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a href="#!">Diversity & Belonging</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Accessibility</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Trust & Safety</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Airbnb Citizen</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Newsroom</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none" />
+          <!-- Grid column -->
+          <div class="col-md-3 mx-auto">
+            <!-- Links -->
+            <h5 class="text-uppercase mt-3 mb-3">community</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a href="#!">Airbnb Magazine</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Airbnb for Work</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Invite friends</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Gift cards</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Careers</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none" />
+          <!-- Grid column -->
+          <div class="col-md-3 mx-auto">
+            <!-- Links -->
+            <h5 class="text-uppercase mt-3 mb-3">host</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a href="{% url 'rooms:create_room' %}">Host your Home</a>
+              </li>
+              <li class="mb-3">
+                <a href="{% url 'rooms:lists_room' %}">Host an experience</a>
+              </li>
+              <li class="mb-3">
+                <a href="#">Responsible hosting</a>
+              </li>
+              <li class="mb-3">
+                <a href="#">Open Homes</a>
+              </li>
+              <li class="mb-3">
+                <a href="#">Olympics</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Resource Center</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none" />
+          <!-- Grid column -->
+          <div class="col-md-3 mx-auto">
+            <!-- Links -->
+            <h5 class="text-uppercase mt-3 mb-3">support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a href="#!">Neighborhood Support</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+      <!-- Copyright -->
+      <div class="container">
+        <div class="footer-copyright my-5 border-top navbar">
+          <div class="copyright pt-4">
+            <p>
+              © 2020 Airbnb, Inc. All Rights reserved &#183;
+              <a href="#!">Privacy</a> &#183; <a href="#!">Terms</a> &#183;
+              <a href="#!">Sitemap</a>
+            </p>
+          </div>
+          <div class="copyright-kanan ml-auto navbar-text">
+            <a class="navbar-link mr-2" href="#!"
+              ><i style="font-size: 15px;" class="fa mr-2">&#xf0ac;</i
+              ><strong><u>English (US)</u></strong></a
+            >
+            <a class="navbar-link mr-5" href="#!"
+              >&#36;<strong><u>USD</u></strong></a
+            >
+            <a href="#" class="fa fa-facebook mr-3"></a>
+            <a href="#" class="fa fa-twitter mr-3"></a>
+            <a href="#" class="fa fa-instagram mr-3"></a>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    {%block javascript%} {%endblock%}
+  </body>
+</html>

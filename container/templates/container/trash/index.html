@@ -1,0 +1,399 @@
+{%extends '../base.html'%}
+{%load static%}
+{%block content%}
+<!-- navbar -->
+<nav class="navbar fixed-top navbar-expand-lg pl-0">
+  <div class="container">
+    <!-- navbar kiri -->
+    <a class="navbar-brand" href="{% url 'antarmuka:index' %}"><img class="logo" src="{% static 'img/logo.png'%}" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- navbar kanan -->
+    <div class="collapse navbar-collapse navbar-text d-flex flex-row-reverse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navhover" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i style="font-size:15px" class="fa mr-2">&#xf0ac;</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">
+              <i style="font-size:14px" class="fa mr-2">&#xf0ac;</i>
+              <strong>English (US)</strong>
+            </a>
+            <a class="dropdown-item" href="#">
+              <span class="mr-2">&#36;</span>
+              <strong>USD</strong>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navhover" href="{% url 'rooms:create_room' %}">Host your home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navhover" href="{% url 'rooms:lists_room' %}">Host an experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navhover" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-1 navhover" href="{% url 'accounts:signup' %}">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn login" href="{% url 'accounts:login' %}">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- akhir navbar -->
+<!-- input database -->
+<form method="GET" action="">
+<div class="places p-4">
+  <div class="container">
+    <div class="row">
+      <h5 class=" loc-title pb-2"><strong>Places to stay</strong></h5>
+    </div>
+    <div class="row">
+      <div class="container input mt-2">
+        <div class="row">
+          <!-- location -->
+            <div class="col-sm-3 my-2 border-right">
+              
+                <span class="text-uppercase"><strong>Location</strong></span><br>
+                <input name="location" class="form-control mr-sm-2 border-0 p-0" type="search" placeholder="Add city, landmark, or address" aria-label="Search" style="font-size: 12px;">
+              
+            </div>
+            <!-- dates -->
+            <div class="col-sm-5 my-2 border-right float-left">
+              
+                <span class="text-uppercase"><strong>Check in / check out</strong></span><br>
+                <input class="form-control mr-sm-2 border-0 p-0 inputtgl1" type="date" aria-label="Search" style="font-size: 12px;">
+                <input class="form-control mr-sm-2 border-0 p-0 inputtgl2" type="date"aria-label="Search" style="font-size: 12px;">
+              
+            </div>
+            <!-- guest -->
+            <div class="col-sm-2 my-2">
+              
+                <span class="text-uppercase"><strong>guest</strong></span><br>
+                <!-- <input class="form-control mr-sm-2 border-0 p-0" type="search" placeholder="Add guest" aria-label="Search" style="font-size: 12px;"> -->
+                <a class="nav-link dropdown-toggle font-weight-normal" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add guest
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">1</a>
+                  <a class="dropdown-item" href="#">2</a>
+                  <a class="dropdown-item" href="#">3</a>
+                  <a class="dropdown-item" href="#">4</a>
+                  <a class="dropdown-item" href="#">5</a>
+                  <a class="dropdown-item" href="#">6</a>
+                  <a class="dropdown-item" href="#">7</a>
+                  <a class="dropdown-item" href="#">8</a>
+                  <a class="dropdown-item" href="#">9</a>
+                  <a class="dropdown-item" href="#">10</a>
+                </div>
+              </a>
+            </div>
+            <!-- search button -->
+            <div class="col-sm-2 my-2 d-flex align-items-center justify-content-center">
+              <button class="btn btn-danger m-0 text-center" type="submit">
+                <span>Search</span>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- akhir input database -->
+<!-- panel -->
+<div class="container panel">
+  <div class="row">
+    <h1 class="judul-panel">We may be apart, but we'll get <br> this together.</h1>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+        <a href="#!" class="text-decoration-none">
+          <div class="card shadow" style="border-radius:20px; width: 350px;">
+            <img class="card-img-top" style="border-radius:20px 20px 0 0; height: 230px;" src="{% static 'img/1.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-text">
+                <h5><strong>Online Experiences</strong></h5>
+                <p>Unique activities we can do together, led by a world of hosts.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="#!" class="text-decoration-none">
+          <div class="card shadow" style="border-radius:20px; width: 350px;">
+            <img class="card-img-top" style="border-radius:20px 20px 0 0; height: 230px;" src="{% static 'img/2.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-text">
+                <h5><strong>Monthly stays</strong></h5>
+                <p>Make Airbnb your home, for stays of a month or longer.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="#!" class="text-decoration-none">
+          <div class="card shadow" style=" border-radius:20px; width: 350px;">
+            <img class="card-img-top" style="border-radius:20px 20px 0 0; height: 230px;" src="{% static 'img/3.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-text">
+                <h5><strong>Frontline stays</strong></h5>
+                <p>Find or provide accomodations for COVID-19 responders.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!-- akhir panel -->
+<!-- experiences -->
+<div class="experiences p-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 caption">
+        <h2><strong>Introducing Online Experiences</strong></h2>
+        <p>Now you can meet people all over the world while trying something new. Join live, interactive video sessions led by expert hosts—all without leaving home.</p>
+      </div>
+      <div class="col-sm-6 d-flex flex-row-reverse explore">
+          <a type="button" class="btn btn-outline-light" href="#!">Explore all</a>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="item1">
+        <a href="#!">
+          <img class="pict1"src="{% static 'img/4.jpg'%}">
+          <p>Mix secret sangria with Pedro from Lisbon</p>
+        </a>
+      </div>
+      <div class="item2">
+        <a href="#!">
+          <img class="pict2"src="{% static 'img/5.jpg'%}">
+          <p>Stretch. Breath. Relax. Yoga class with friends.</p>
+        </a>
+      </div>
+      <div class="item3">
+        <a href="#!">
+          <img class="pict3"src="{% static 'img/6.jpg'%}">
+          <p>Meditate to music with Janice from Amsterdam</p>
+        </a>
+      </div>  
+      <div class="item4">
+        <a href="#!">
+          <img class="pict4"src="{% static 'img/7.jpg'%}">
+          <p>Visit and support the dogs of Chernobyl</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- akhir experiences -->
+<!-- host frontline -->
+<div class="frontline m-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 class="mb-3"><strong>Host a hero: help us house frontline responders around the world</strong></h2>
+        <a href="#!" class="btn btn-outline-dark"> Get involved</a>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-justify">With Frontline stays, Airbnb is partnering with our hosts to connect 100,000 healthcare providers, relief workers, and first responders with clean places to stay that allow them to be close to their patients - and safely distanced from their own families. </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- akhir host frontline -->
+<!-- information -->
+<div class="information p-5">
+  <div class="container">
+    <div class="row mb-5">
+      <h5><strong>Stay Informed </strong></h5>
+    </div>
+    <div class="row">
+      <!-- for guest -->
+      <div class="col-sm-3">
+        <div class="row mb-3 pb-3 border-bottom mr-1">
+          <h6 class="">For guest</h6>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Updates for travel</strong></p>
+            <p>What you should know</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Cancellation options</strong></p>
+            <p>Learn what's covered</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Help Center</strong></p>
+            <p>Get support</p>
+          </a>
+        </div>
+      </div>
+      <!-- for host -->
+      <div class="col-sm-3">
+        <div class="row mb-3 pb-3 border-bottom mr-1">
+          <h6 class="">For host</h6>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Message from Brian Chesky</strong></p>
+            <p>Hear from our CEO</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Resources for hosting</strong></p>
+            <p>What's impacted by COVID-19</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Providing frontline stays</strong></p>
+            <p>Learn how to help</p>
+          </a>
+        </div>
+      </div>
+      <!-- for COVID - 19 responders -->
+      <div class="col-sm-3">
+        <div class="row mb-3 pb-3 border-bottom mr-1">
+          <h6 class="">For COVID-19 responders</h6>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Frontline stays</strong></p>
+            <p>Learn about our program</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Sign up</strong></p>
+            <p>Check for housing options</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Make a donation</strong></p>
+            <p>Support nonprofit organizations</p>
+          </a>
+        </div>
+      </div>
+      <!-- more -->
+      <div class="col-sm-3">
+        <div class="row mb-3 pb-3 border-bottom mr-1">
+          <h6 class="">More</h6>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>Airbnb Newsroom</strong></p>
+            <p>Latest announcements</p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0"><strong>World Health Organization</strong></p>
+            <p>Education and updates</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- akhir information -->
+<!-- destination -->
+<div class="destination p-5">
+  <div class="container">
+    <div class="row mb-5">
+      <h5><strong>Destination for future trips </strong></h5>
+    </div>
+    <div class="row">
+      <!-- 1st city -->
+      <div class="col-sm-3">
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>San Fransisco</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Denver</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Houston</strong></p>
+          </a>
+        </div>
+      </div>
+      <!-- 2nd city -->
+      <div class="col-sm-3">
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Los Angeles</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Washington DC</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>New Orleans</strong></p>
+          </a>
+        </div>
+      </div>
+      <!-- 3rd city -->
+      <div class="col-sm-3">
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>New York</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Phoenix</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Boston</strong></p>
+          </a>
+        </div>
+      </div>
+      <!-- 4th city -->
+      <div class="col-sm-3">
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Seatle</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Austin</strong></p>
+          </a>
+        </div>
+        <div class="row mb-3 border-bottom mr-1">
+          <a href="#!">
+            <p class="m-0 pb-3"><strong>Miami</strong></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- akhir destination -->
+{%endblock%}
