@@ -96,7 +96,7 @@ def rooms_list(request):
 
     query = request.GET.get("location")
     if query:
-        queryset_list = queryset_list.filter(name__icontains=query)
+        queryset_list = queryset_list.filter(city_id__name__icontains=query)
 
     paginator = Paginator(queryset_list, 5)
 
