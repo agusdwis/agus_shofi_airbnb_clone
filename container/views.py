@@ -18,6 +18,7 @@ def index(request):
     return render(request, 'container/index_final.html')
 
 
+@login_required(login_url='accounts:login')
 def rooms_create(request):
     if not request.user.is_staff or not request.user.is_superuser:
         return redirect('accounts:login')
@@ -55,7 +56,10 @@ def rooms_detail(request, id):
             comment=request.POST.get('comment'),
             rating=request.POST.get('rating'),
         )
-        cm.save()
+        if not request.user.is_authenticated:
+            return redirect('accounts:login')
+        else:
+            cm.save()
 
     review_set = []
     rating = 0
@@ -121,6 +125,7 @@ def rooms_list(request):
     return render(request, 'container/rooms_lists_final.html', context)
 
 
+@login_required(login_url='accounts:login')
 def rooms_update(request, id=None):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
@@ -142,6 +147,7 @@ def rooms_update(request, id=None):
     return render(request, 'container/rooms_update_final.html', context)
 
 
+@login_required(login_url='accounts:login')
 def rooms_delete(request, id=None):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
@@ -152,6 +158,7 @@ def rooms_delete(request, id=None):
     return redirect('rooms:lists_room')
 
 
+@login_required(login_url='accounts:login')
 def upload_media(request, id=None):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
@@ -176,6 +183,7 @@ def upload_media(request, id=None):
     return render(request, 'container/rooms_upload_final.html', context)
 
 
+@login_required(login_url='accounts:login')
 def create_review(request):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
@@ -200,6 +208,7 @@ def create_review(request):
     return render(request, 'container/rooms_review_final.html', context)
 
 
+@login_required(login_url='accounts:login')
 def new_review(request, pk):
     #review = get_object_or_404(Reviews, property_id__pk=pk)
     review = Reviews.objects.all()
