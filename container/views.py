@@ -5,6 +5,7 @@ from . models import Dwelling, DwellingImages, Categories, Reviews, Cities, Amen
 from .forms import DwellingForm, ReviewsForm, ImagesForm, NewReview
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -12,7 +13,7 @@ def index(request):
     query = request.GET.get("location")
     if query:
         queryset_list = queryset_list.filter(name__icontains=query)
-        return redirect('rooms:lists_room')
+        return render(request, 'rooms:lists_room')
 
     return render(request, 'container/index_final.html')
 
@@ -222,3 +223,9 @@ def new_review(request, pk):
 #     like = dwells.like_dwell
 #     Dwelling.objects.filter(pk=id).update(like_video=like+1)
 #     return redirect('/'+str(videos_id)+'/')
+
+@login_required(login_url='accounts:login')
+def rooms_search(request):
+    keyword = request.GET.get('q')
+    hasil = Dwelling.objects.filter(name__icontains=keyword)
+    return render(request, 'container/search.html', {'rooms': hasil, 'keyword': keyword})

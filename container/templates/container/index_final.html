@@ -1,5 +1,7 @@
 {%extends '../base_final.html'%}
 {%load static%}
+
+{%block title%} Air BNB {%endblock%}
 {%block content%}
 
 <!-- input database -->
@@ -16,7 +18,7 @@
             <div class="col-sm-3 my-2 border-right">
               
                 <span class="text-uppercase"><strong>Location</strong></span><br>
-                <input name="location" class="form-control mr-sm-2 border-0 p-0" type="search" placeholder="Add city, landmark, or address" aria-label="Search" style="font-size: 12px;">
+                <input name="q" class="form-control mr-sm-2 border-0 p-0" type="text" placeholder="Add city, landmark, or address" aria-label="Search" style="font-size: 12px;">
               
             </div>
             <!-- dates -->
