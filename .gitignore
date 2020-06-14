@@ -3,7 +3,7 @@ __pycache__/
 airbnb_env/
 *.py[cod]
 *$py.class
-
+airbnb_env/
 # C extensions
 *.so
 
